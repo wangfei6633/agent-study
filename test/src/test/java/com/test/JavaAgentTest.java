@@ -5,7 +5,7 @@ import demo.Hello;
 /*
   javaassist 字节码修改时机：premain
 */
-public class HelloWithAgentTest {
+public class JavaAgentTest {
     /**
      *  vmoption -javaagent:D:\agent-study\premain-agent\target\premain-agent.jar
      * @param args

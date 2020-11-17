@@ -10,7 +10,7 @@ public class HelloNormalTest {
         int i = 0;
         try {
             while (true) {
-                System.out.println("pid = [" + getPid() + "]");
+                System.out.println(i+"---pid = [" + getPid() + "]");
                 i++;
                 Hello hello = new Hello();
                 hello.sayA("lhy");

@@ -30,7 +30,7 @@ public class ClassFileTransformerImpl implements ClassFileTransformer {
             if (className == null || excludeStartWithClassName(className)) {
                 return null;
             }
-            System.out.println("loader = [" + loader + "], className = [" + className + "], classBeingRedefined = [" + classBeingRedefined + "], protectionDomain = [" + protectionDomain + "], classfileBuffer = [" + classfileBuffer + "]");
+//            System.out.println("loader = [" + loader + "], className = [" + className + "], classBeingRedefined = [" + classBeingRedefined + "], protectionDomain = [" + protectionDomain + "], classfileBuffer = [" + classfileBuffer + "]");
             String fixedClassName = className.replace("/", ".");
             byteArrayClassPath = new ByteArrayClassPath(fixedClassName, classfileBuffer);
             classPool.insertClassPath(byteArrayClassPath);

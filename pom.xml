@@ -12,6 +12,7 @@
         <module>annotation-agent</module>
         <module>test</module>
         <module>jvm-agent</module>
+        <module>dynamic-agent</module>
     </modules>
     <packaging>pom</packaging>
 
