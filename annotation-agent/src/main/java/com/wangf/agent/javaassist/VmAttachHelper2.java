@@ -74,16 +74,16 @@ public class VmAttachHelper2 {
                     }
 
                     loadAgent(agentPath);
-
-                    if (!agentLoadedUseAppLoader.get()) {
-                        Instrumentation inst = getInstrumentation();
-                        if (inst == null) {
-                            logger.error("addTransformer失败!!! Instrumentation is null");
-                            return;
-                        }
-                        ClassFileTransformer classFileTransformer = new ClassFileTransformerImpl();
-                        inst.addTransformer(classFileTransformer, true);
-                    }
+//
+//                    if (!agentLoadedUseAppLoader.get()) {
+//                        Instrumentation inst = getInstrumentation();
+//                        if (inst == null) {
+//                            logger.error("addTransformer失败!!! Instrumentation is null");
+//                            return;
+//                        }
+//                        ClassFileTransformer classFileTransformer = new ClassFileTransformerImpl();
+//                        inst.addTransformer(classFileTransformer, true);
+//                    }
                     attached.set(true);
                 }
             }

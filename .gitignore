@@ -8,3 +8,4 @@ target
 /.idea/
 /agent-main/target/
 /test/target/
+/annotation-agent/target/
