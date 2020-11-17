@@ -2,10 +2,12 @@ package com.test;
 
 
 import demo.Hello;
-
+/*
+  javaassist 字节码修改时机：premain
+*/
 public class HelloWithAgentTest {
     /**
-     *  vmoption -javaagent:/Users/wangfei/Devlop/openSource/agent-study/premain-agent/target/premain-agent.jar
+     *  vmoption -javaagent:D:\agent-study\premain-agent\target\premain-agent.jar
      * @param args
      */
     public static void main(String[] args) {
