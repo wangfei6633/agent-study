@@ -58,7 +58,7 @@ public class AnnotationMethodExecution {
     }
     public final void methodBefore(String className, String methodName, Class<?>[] paramsType, Object[] args, String value) {
         try {
-                System.out.println("[before]className = [" + className + "], methodName = [" + methodName + "], paramsType = [" + paramsType + "], args = [" + buildParamsString(args) + "], value = [" + value + "]");
+                System.out.println("[before]className = [" + className + "], methodName = [" + methodName + "], paramsType = [" + JSON.toJSONString(paramsType) + "], args = [" + buildParamsString(args) + "], value = [" + value + "]");
 
             Stack<TrackInfo> stack = trackStackInheritable.get();
             if (stack == null) {
