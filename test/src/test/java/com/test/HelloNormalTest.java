@@ -1,6 +1,7 @@
 package com.test;
 
 import demo.Hello;
+import demo.World;
 
 import java.lang.management.ManagementFactory;
 
@@ -10,12 +11,14 @@ public class HelloNormalTest {
         int i = 0;
         try {
             while (true) {
-                System.out.println(i+"---pid = [" + getPid() + "]");
+                System.out.println(i + "---pid = [" + getPid() + "]");
                 i++;
                 Hello hello = new Hello();
                 hello.sayA("lhy");
+                World world = new World();
+                world.bye("zhangsan");
                 Thread.sleep(10000l);
-            System.out.println("-------------continue----------------");
+                System.out.println("-------------continue----------------");
 
             }
         } catch (InterruptedException e) {

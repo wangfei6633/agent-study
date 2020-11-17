@@ -20,7 +20,8 @@ public class DynamicAgent {
             inst.addTransformer(classFileTransformer, true);
             //需要指定类 重新加载一下
             inst.retransformClasses(Class.forName("demo.Hello"));
-            System.out.println("classFileTransformer = [" + classFileTransformer + "]");
+            inst.retransformClasses(Class.forName("demo.World"));
+
         } catch (Exception e) {
         }
 
