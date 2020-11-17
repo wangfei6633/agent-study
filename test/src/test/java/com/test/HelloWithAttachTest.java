@@ -9,6 +9,7 @@ public class HelloWithAttachTest {
         String agentPath = "/Users/wangfei/Devlop/openSource/agent-study/agent-main/target/agent-main.jar";
         VmAttachHelper.attach(agentPath);
         Hello hello=new Hello();
-        hello.sayA();
+        String name="wf";
+        hello.sayA(name);
     }
 }

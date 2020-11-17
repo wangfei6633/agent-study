@@ -8,8 +8,8 @@ import com.wangf.agent.javaassist.TrackLog;
  */
 public class Hello {
     @TrackLog(value = "A")
-    public void sayA() {
-        System.out.println("say  hello  to A");
+    public void sayA(String name) {
+        System.out.println("say  hello  to "+name);
         sayB();
     }
     public void sayB() {

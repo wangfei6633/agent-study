@@ -8,6 +8,7 @@ public class HelloWithAnnotationTest {
         String agentPath = "/Users/wangfei/Devlop/openSource/agent-study/annotation-agent/target/annotation-agent.jar";
         VmAttachHelper2.attach(agentPath);
         Hello hello=new Hello();
-        hello.sayA();
+        String name="wf";
+        hello.sayA(name);
     }
 }

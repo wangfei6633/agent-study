@@ -29,9 +29,36 @@ public class AnnotationMethodExecution {
         return AnnotationMethodExecutionHolder.methodExecution;
     }
 
+    protected String buildParamsString( Object[] params){
+        StringBuilder stringBuilder = new StringBuilder();
+        if (params != null && params.length > 0){
+            stringBuilder.append("{");
+            for (int i = 0; i < params.length; i++){
+                try {
+                    Object param = params[i];
+                    Class<?> paramClazz = params[i].getClass();
+                    // fix bug getOutputStream() has already been called for this response
+
+                    stringBuilder.append("\"")
+                            .append(paramClazz.getSimpleName())
+                            .append("_").append(i)
+                            .append("\":\"")
+                            .append(JSON.toJSONString(param))
+                            .append("\",");
+                }catch (Throwable throwable){
+                    continue;
+                }
+            }
+            if (stringBuilder.length() > 1){
+                stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+            }
+            stringBuilder.append("}");
+        }
+        return stringBuilder.toString();
+    }
     public final void methodBefore(String className, String methodName, Class<?>[] paramsType, Object[] args, String value) {
         try {
-            System.out.println("[before]className = [" + className + "], methodName = [" + methodName + "], paramsType = [" + paramsType + "], args = [" + args + "], value = [" + value + "]");
+                System.out.println("[before]className = [" + className + "], methodName = [" + methodName + "], paramsType = [" + paramsType + "], args = [" + buildParamsString(args) + "], value = [" + value + "]");
 
             Stack<TrackInfo> stack = trackStackInheritable.get();
             if (stack == null) {

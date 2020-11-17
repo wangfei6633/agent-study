@@ -10,6 +10,7 @@ public class HelloWithAgentTest {
      */
     public static void main(String[] args) {
         Hello hello=new Hello();
-        hello.sayA();
+        String name="wf";
+        hello.sayA(name);
     }
 }

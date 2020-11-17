@@ -57,7 +57,7 @@ public class VmAttachHelper2 {
 
                 boolean attachable = MonitoredVmUtil.isAttachable(vm);
 
-                logger.info("jvm attachable: {}", attachable);
+                logger.info("jvm {}attachable: {}",pid, attachable);
 
                 if (attachable) {
                     attachPid(pid);
