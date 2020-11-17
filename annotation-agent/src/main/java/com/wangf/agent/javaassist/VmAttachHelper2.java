@@ -43,13 +43,15 @@ public class VmAttachHelper2 {
         return agentLoadedUseAppLoader;
     }
 
-    public static void attach(String agentPath) {
+    public static void attach(String pid,String agentPath) {
         try {
             // 保证只初始化一遍
             if (SWITCH.compareAndSet(false, true)) {
-                Class.forName("sun.jvmstat.monitor.MonitoredHost");
-                String name = ManagementFactory.getRuntimeMXBean().getName();
-                String pid = name.split("@")[0];
+                if(StringUtils.isEmpty(pid)){
+                    Class.forName("sun.jvmstat.monitor.MonitoredHost");
+                    String name = ManagementFactory.getRuntimeMXBean().getName();
+                  pid=  name.split("@")[0];
+                }
 
                 MonitoredHost local = MonitoredHost.getMonitoredHost("localhost");
 
@@ -57,7 +59,7 @@ public class VmAttachHelper2 {
 
                 boolean attachable = MonitoredVmUtil.isAttachable(vm);
 
-                logger.info("jvm {}attachable: {}",pid, attachable);
+                logger.info("jvm {} attachable: {}",pid, attachable);
 
                 if (attachable) {
                     attachPid(pid);
