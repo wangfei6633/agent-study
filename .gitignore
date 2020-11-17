@@ -4,3 +4,7 @@
 *.iml
 target
 .idea
+/premain-agent/target/
+/.idea/
+/agent-main/target/
+/test/target/
